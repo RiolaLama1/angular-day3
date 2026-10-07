@@ -1,0 +1,30 @@
+<div class="container">
+  <h2 class="my-4 text-center">Add User</h2>
+  <form [formGroup]="userForm">
+    <!-- FirstName -->
+    <label for="first-name" class="form-label">First Name: </label>
+    <input id="first-name" type="text" class="form-control" formControlName="firstName" />
+    @if (userForm.get('firstName')?.hasError('required') && userForm.get('firstName')?.touched) {
+      <p class="text-danger">First Name is required</p>
+    }
+    <!-- LastName -->
+    <label for="last-name" class="form-label">Last Name: </label>
+    <input id="last-name" type="text" class="form-control" formControlName="lastName" />
+    @if (userForm.get('lastName')?.hasError('required') && userForm.get('lastName')?.touched) {
+      <p class="text-danger">Last Name is required</p>
+    }
+    <!-- Age -->
+    <label for="last-name" class="form-label">Age: </label>
+    <input id="last-name" type="number" class="form-control" formControlName="age" />
+    @if (userForm.get('age')?.hasError('required') && userForm.get('age')?.touched) {
+      <p class="text-danger">Age is required</p>
+    }
+    <!-- Email -->
+    <label for="last-name" class="form-label">Email: </label>
+    <input id="last-name" type="email" class="form-control" formControlName="email" />
+    @if (userForm.get('email')?.hasError('required') && userForm.get('email')?.touched) {
+      <p class="text-danger">Email is required</p>
+    }
+    <button type="submit" class="btn btn-primary mt-5" (click)="addUser()">Add User</button>
+  </form>
+</div>
